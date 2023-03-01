@@ -1,0 +1,179 @@
+.message-body{
+    background: rgba(135,206,235, 0.3);
+    position: relative;
+    border-radius: 10px;
+    padding: 10px 30px;
+    box-shadow: 0 0 10px skyblue;
+    width: 100%;
+    height:92vh;
+    margin: auto;
+}
+.message-body h3{
+    font-weight: bolder;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    text-shadow: 0 0 10px orangered;
+}
+.message{
+    height: 70vh;
+    padding: 20px 0;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    margin: 20px 0;
+}
+.ms img{
+    width: 40px;
+    height: 40px
+}
+.ms{
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+.ms-content{
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    background: #656d7a;
+    padding: 5px 15px;
+    width: fit-content;
+    border-radius: 10px;
+    max-width: 200px;
+    word-break:break-all;
+}
+.own-ms-content{
+    background: #6085b3;
+}
+.ms-content span:first-child{
+    color: chartreuse;
+}
+.ms-content span:nth-child(2){
+    font-size: medium;
+    color: rgb(219, 219, 219);
+}
+.dateTime{
+    font-size: 10px;
+    color: yellow;
+}
+.own-ms{
+    flex-direction: row-reverse;
+    place-self: end;
+}
+.type-ms input{
+    padding: 15px 20px;
+    background: #fff;
+    outline: none;
+    border-radius: 5px;
+    width: 100%;
+    border: skyblue;
+    font-size: 1rem;
+}
+.type-ms input::placeholder{
+    color: skyblue;
+    font-size: .8rem;
+}
+.type-ms{
+    position: relative;
+    padding: 0 20px;
+}
+.send-icon{
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    cursor: pointer;
+}
+.chat-header{
+    position: relative;
+}
+.more-icon{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+.menu{
+    position: absolute;
+    right: 20px;
+    background: rgb(137, 181, 198);
+    padding: 20px 0;
+    border-radius: 10px;
+    transition: all .5s linear;
+}
+.menu ul{
+    list-style: none;
+}
+.menu ul li{
+    color: #33579f;
+    font-size: medium;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all .5s linear;
+}
+.menu ul li:hover{
+    background: skyblue;
+}
+.link{
+    text-decoration: none;
+}
+.owner::after{
+    content: " Owner";
+    color: yellow;
+}
+.member{
+    position: absolute;
+    background: skyblue;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    transition: all .5s linear;
+}
+.clost-icon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: all .5s linear;
+}
+@media (max-width:800px){
+    .message{
+        height: 58vh;
+    }
+    .ms-content{
+        max-width: 150px;
+    }
+    .message-body{
+        top: 0vh;
+        padding: 20px 10px;
+        width: 100%;
+    }
+    .menu ul li{
+        padding: 10px 50px;
+    }
+    .type-ms{
+        padding: 0;
+    }
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(37, 37, 37);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: skyblue;
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #33579f;
+  }

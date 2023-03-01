@@ -1,0 +1,27 @@
+:root{
+  --gray : #424241;
+  --slate: #547793;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: skyblue;
+}
+body{
+  background-image: url("https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.container{
+  margin: auto 10%;
+  overflow-y: hidden;
+  position: relative;
+}
+@media (max-width:800px){
+  .container{
+    margin: auto 2%;
+  }
+}

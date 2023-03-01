@@ -1,0 +1,88 @@
+.btn{
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    transition: .3s linear;
+    cursor: pointer;
+    width:120px;
+    background: skyblue;
+    color: antiquewhite;
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+.btn-active{
+    background: green;
+}
+.cover{
+    width: 70%;
+    position: fixed;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.title{
+    flex: 0.5;
+    margin-top: 50px;
+}
+.button{
+    flex: 1;
+    width: 100%;
+}
+.chat{
+    flex: 1;
+}
+.button span{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.title h1{
+    background-image: linear-gradient(to right,red,green,blue);
+    background-clip: text;
+    color: transparent;
+    word-break: keep-all;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+@media (max-width: 800px){
+    .title h1{
+        display: flex;
+        justify-content: center;
+    }
+    .cover{
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        width: 95%;
+    }
+    .button span{
+        width: 70%;
+        margin: 10px auto;
+    }
+    .chat{
+        height: 80vh;
+        margin: auto 10px;
+    }
+}
+@media (min-width: 800px) {
+    .cover{
+        margin-top: 50px;
+        width: 85%;
+    }
+    .chat{
+        margin: auto 20px;
+        flex: 1;
+        position: relative;
+    }
+    .title{
+        flex: 0.5;
+    }
+}
+@media (min-width: 1200px){
+    .cover{
+        margin-top: 50px;
+        width: 70%;
+    }
+}

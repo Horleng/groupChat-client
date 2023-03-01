@@ -1,0 +1,138 @@
+.create-co{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 20px;
+    color: gray;
+}
+.create-co h3{
+    margin: 10px auto;
+    font-size: 20px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    gap: 10px;
+}
+.form span{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.form span input{
+    padding: 12px 20px;
+    border: 2px solid skyblue;
+    border-radius: 10px;
+    font-size: medium;
+    transition: all .3s;
+    background: rgba(151, 192, 209, 0.8);
+    outline: none;
+    transition: all .5s linear;
+    color: rgb(67, 67, 67);
+}
+.form span input:focus{
+    border-color: green;
+    border: 2px solid green;
+}
+.form span input::placeholder{
+    color: rgb(67, 67, 67);
+    font-size: smaller;
+}
+.btn-create{
+    width: 120px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all .4s linear;
+    border-radius: 10px;
+    background: skyblue;
+    color: gray;
+    font: bolder;
+}
+.btn-create:hover{
+    background: green;
+    color: #fff;
+}
+.copy-icon{
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    cursor: pointer;
+}
+.create-name{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+}
+.create-name span:first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 2;
+}
+.create-name span input{
+    padding: 12px 20px;
+    border: 2px solid skyblue;
+    border-radius: 10px;
+    font-size: medium;
+    transition: all .3s;
+    background: rgba(151, 192, 209, 0.8);
+    outline: none;
+    transition: all .5s linear;
+    color: gray;
+    
+}
+.create-name span{
+    width: 100%;
+}
+.btn-next{
+    border-radius: 10px;
+    padding: 12px 20px;
+    width: 100%;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition:  all .3s linear;
+}
+.btn-next:first-child{
+    background: rgb(186, 4, 4);
+}
+.btn-next:first-child:hover{
+    background: rgb(255, 46, 46);
+}
+.btn-next:last-child{
+    background: green;
+}
+.btn-next:last-child:hover{
+    background: rgb(6, 170, 6);
+}
+@media(max-width:800px){
+    .form{
+        width: 70%;
+        gap: 0;
+    }
+    .btn-create{
+        margin: 10px auto;
+        width: 90%;
+    }
+}
+@media (max-width:400px){
+    .form{
+        width: 90%;
+        gap: 0;
+    }
+    .form span{
+        width: 100%;
+    }
+    .form button{
+        width: 100%;
+        padding: 15px 25px;
+    }
+    .create-name {
+        width: 90%;
+    }
+}
+
