@@ -9,7 +9,7 @@ const HomePage = () => {
     const [createRoom,setCreateRoom] = useState(true);
     const {socket,setSocket,showChat,setGroupInformation} = useContext(Context);
     useEffect(()=>{
-        setSocket(io("ws://localhost:5000"));
+        setSocket(io("https://groupchat-api-4img.onrender.com"));
     },[setSocket]);
     useEffect(()=>{
         socket?.on("connect",()=>{
