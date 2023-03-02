@@ -31,10 +31,10 @@ const HomePage = () => {
                 showChat?<div className='chat'><ChatGroup/></div>:
                 <div className='button'>
                 <span>
-                    <button id='mybtn-1' className='btn btn-active' onClick={()=>{
+                    <button id='mybtn-1' className={'btn '+(createRoom?"btn-active":"")} onClick={()=>{
                         setCreateRoom(true);
                     }}>Create room</button>  
-                    <button id='mybtn-2' className='btn' onClick={()=>{
+                    <button id='mybtn-2' className={'btn '+(createRoom?"":"btn-active")} onClick={()=>{
                         setCreateRoom(false);
                     }}>join room</button> 
                 </span> 

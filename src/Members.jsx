@@ -11,6 +11,21 @@ const Members = () => {
             setGroupInformation(data);
         });
     },[setGroupInformation,socket])
+    const removerUser = (userId)=>{
+        if(window.confirm("Are you sure you want to remove this user?")){
+            socket?.emit("removerUser",{userId,groupId:id});
+        }
+    }
+    useEffect(()=>{
+        socket?.on("response-remove",async({remover,admin})=>{
+            if(socket.id===remover?.socketId){
+                alert(`You was removed by ${admin.username}`);
+                window.location.reload();
+            }else {
+                alert(`${remover.username} was removeed by ${admin.username}`);
+            }
+        });
+    },[socket]);
     return (
         <>
             <div className='card-cover'>
@@ -26,15 +41,15 @@ const Members = () => {
                                 <div className='info'>
                                     <h6 className='name'>{item.username}</h6>
                                     {
-                                        item.socketId===socket.id?
+                                        item.socketId===groupInformation.owner?
                                         <p className='join-date owner-date'>Owner</p>:
-                                        <p className='join-date'>Join At : {joinDate.toLocaleTimeString()}</p>
+                                        <p className='join-date'>{joinDate.toLocaleTimeString()}</p>
                                     }
                                 </div>
                                 <span className='remove-btn'>
                                     {
-                                        socket?.id===groupInformation?.owner?
-                                        <button>Remove</button>:<></>
+                                        socket?.id===groupInformation?.owner && item.socketId!==groupInformation.owner?
+                                        <button onClick={()=>removerUser(item.socketId)}>Remove</button>:<></>
                                     }
                                 </span>
                             </div>

@@ -19,6 +19,9 @@ const JoinRoom = () => {
             if(data.success) setShowChat(true);
         });
     },[socket,setShowChat]);
+    const handleKeyPress = (e)=>{
+        if(e.key==="Enter") join();
+    }
     return (
 
             <div>
@@ -27,19 +30,19 @@ const JoinRoom = () => {
                     <span>
                         <label htmlFor="gr-id">Group ID</label>
                         <input type="text" placeholder='Enter group ID'
-                        value={groupID} onChange={e=>setGroupID(e.target.value)}/>
+                        value={groupID} onChange={e=>setGroupID(e.target.value)} onKeyPress={handleKeyPress}/>
                     </span>
                     <span>
                         <label htmlFor="gr-password">Group Password</label>
                         <input type="text" id="gr-password" placeholder='Enter group password'
-                        value={password} onChange={e=>setPassword(e.target.value)}/>
+                        value={password} onChange={e=>setPassword(e.target.value)} onKeyPress={handleKeyPress}/>
                     </span>
                     <span>
                         <label htmlFor="name">Name</label>
                         <input type="text" id="name" placeholder='your name'
-                        value={name} onChange={e=>setName(e.target.value)}/>
+                        value={name} onChange={e=>setName(e.target.value)} onKeyPress={handleKeyPress}/>
                     </span>
-                    <button onClick={join} className='btn-create'>Join Group</button>
+                    <button onClick={join} className='btn-create'  onKeyPress={handleKeyPress}>Join Group</button>
                 </div>
             </div>
     );

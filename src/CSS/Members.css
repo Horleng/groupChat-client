@@ -57,8 +57,14 @@
     display: flex;
     justify-content: center;
 }
+.join-date::before{
+    content: 'Join Date : ';
+}
 .owner-date{
     color: green;
+}
+.owner-date::before{
+    content: '';
 }
 .remove-btn button{
     padding: 5px 10px;
@@ -97,20 +103,24 @@
     .card-cover{
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
     }
     .join-date{
         display: block;
+    }
+    .join-date::before{
+        content: '';
     }
     .card{
         display: flex;
         gap: 20px;
         padding: 1px 20px;
-        width: 95%;
+        width: 100%;
         flex-direction: row;
         height: fit-content;
         margin: auto;
         border-radius: 20px;
+        justify-content: space-between;
     }
     .remove-btn {
         place-self: start;

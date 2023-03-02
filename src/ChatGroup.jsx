@@ -19,7 +19,7 @@ const ChatGroup = () => {
             if(id){
                 const data = {ms:ms.current.value,sendDate:Date.now(),sender:socket.id,groupID:id};
                 socket?.emit("sendMessage",data);
-                const ownData = {ms:ms.current.value,sendDate:Date.now(),sender:socket.id,groupID:id,author:"you"};
+                const ownData = {ms:ms.current.value,sendDate:Date.now(),sender:socket.id,groupID:id,author:"You"};
                 setMessage(neMs=>[...neMs,ownData]);
                 ms.current.value = "";
             }else alert("Error system");
@@ -87,7 +87,10 @@ const ChatGroup = () => {
                                             <span className={""+(ms.owner===ms.sender?"owner":" ")}>{ms.author}</span>
                                             <span>{ms.ms}</span>
                                         </div>
-                                        <span className='dateTime'>{moment(ms.sendDate).fromNow()}</span>
+                                        {
+                                            groupInformation?.owner!==socket?.id?
+                                            <span className='dateTime'>{moment(ms.sendDate).fromNow()}</span>:<></>
+                                        }
                                     </div>
                                 </div>
                             )

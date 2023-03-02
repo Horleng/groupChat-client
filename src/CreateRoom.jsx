@@ -33,6 +33,9 @@ const CreateRoom = () => {
         }
         setGroupID((guid));
     },[]);
+    const handleKeyPress = (e)=>{
+        if(e.key==="Enter") makeRoom();
+    }
     return (
         <div className='create-co'>
                 <div className='form'>
@@ -40,24 +43,24 @@ const CreateRoom = () => {
                     <span>
                         <label htmlFor="gr-name">Group Name</label>
                         <input type="text" id='gr-name' placeholder="Enter your group's name?"
-                        value={groupName} onChange={e=>setGroupName(e.target.value)}/>
+                        value={groupName} onChange={e=>setGroupName(e.target.value)} onKeyPress={handleKeyPress}/>
                     </span>
                     <span>
                             <label htmlFor="gr-pass">Group Password</label>
                             <input type="text" id='gr-pass' placeholder="Enter your group's password?"
-                            value={password} onChange={e=>setPassword(e.target.value)}/>
+                            value={password} onChange={e=>setPassword(e.target.value)} onKeyPress={handleKeyPress}/>
                     </span>
                     <span>
                             <label htmlFor="gr-pass">Your Name</label>
                             <input type="text" id='gr-pass' placeholder="Enter your name?"
-                            value={name} onChange={e=>setName(e.target.value)}/>
+                            value={name} onChange={e=>setName(e.target.value)} onKeyPress={handleKeyPress}/>
                     </span>
                     <span>
                         <label htmlFor="gr-id">Group ID</label>
                         <input type="text" id='gr-id' value={groupID} disabled/>
                         <AiFillCopy onClick={copyID} size="25px" className="copy-icon"/>
                     </span>
-                    <button className='btn-create' onClick={makeRoom}>Create</button>
+                    <button  onKeyPress={handleKeyPress} className='btn-create' onClick={makeRoom}>Create</button>
                 </div>
         </div>
     );
